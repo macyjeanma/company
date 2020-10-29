@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root "users#sign_in"
+  post "/exchange", to: "free_cupons#new"
+
+
   resources :users, only: [:create] do
     collection do
       get :sign_up
@@ -9,6 +14,10 @@ Rails.application.routes.draw do
       delete :sign_out
     end
   end
-  root "users#sign_in"
-  post "/exchange", to: "free_cupons#new"
+
+
+  resources :free_cupons, shallow: true do
+    
+  end
+
 end
