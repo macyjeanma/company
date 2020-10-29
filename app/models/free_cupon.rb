@@ -1,0 +1,2 @@
+class FreeCupon < ApplicationRecord
+end
