@@ -1,0 +1,28 @@
+<h1>領取復興卷</h1>
+
+<% if @free_cupon.errors.any?  %>
+  <ul>
+  <% @free_cupon..errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@free_cupon) do |f| %>
+  <div class="fields">
+    <%= f.label :compony, "公司名稱" %>
+    <%= f.text_field :compony %>
+  </div>
+
+  <div class="fields">
+    <%= f.label :serial_number, "公司統編" %>
+    <%= f.text_field :serial_number %>
+  </div>
+
+  <div class="fields">
+    <%= f.label :phone, "電話" %>
+    <%= f.telephone_field :phone %>
+  </div>
+
+  <%= f.submit "送出" %>
+<% end %>
