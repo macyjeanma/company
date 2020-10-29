@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       # 登入
       sign_in_user(@user)
-      redirect_to root_path, notice: '會員註冊成功'
+      redirect_to free_cupons_path, notice: '會員註冊成功'
     else
       render :sign_up
     end

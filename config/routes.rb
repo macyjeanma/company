@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   end
 
 
-  resources :free_cupons, shallow: true do
-    
+  resources :free_cupons, except: [:edit, :update, :destroy], shallow: true do
   end
-
 end
