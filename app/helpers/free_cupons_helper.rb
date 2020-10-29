@@ -1,0 +1,2 @@
+module FreeCuponsHelper
+end

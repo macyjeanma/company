@@ -1,0 +1,2 @@
+class FreeCuponsController < ApplicationController
+end
