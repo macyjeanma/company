@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
-  def sign_in
-    @user = User.new
-  end
-
   def login
     if user_params[:account] && user_params[:password]
       user = User.login(user_params)
       if user
         sign_in_user(user)
+        redirect_to exchange_path, notice: "登入成功"
       else
         redirect_to sign_in_users_path, notice: "請輸入正確帳號密碼"
       end

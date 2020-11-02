@@ -1,15 +1,15 @@
 class FreeCuponsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @free_cupon = free_cupon.all
+    @free_cupon = FreeCupon.all
   end
 
   def new 
-    @free_cupon= free_cupon.new
+    @free_cupon = FreeCupon.new
   end
 
   def create
-    @free_cupon = free_cupon.new(free_cupon_params)
+    @free_cupon = FreeCupon.new(free_cupon_params)
     if @free_cupon.save
       redirect_to free_cupon_path, notice: "已領取復興卷"
     else

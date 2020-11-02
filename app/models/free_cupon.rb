@@ -1,7 +1,7 @@
 class FreeCupon < ApplicationRecord
   validates :compony, presence: true, uniqueness: true
   validates :serial_number, presence: true, uniqueness: true
-  validates :phone
+  validate :phone
   belongs_to :user
   
   before_create :create_serial

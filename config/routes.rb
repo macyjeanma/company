@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root "users#sign_in"
-  post "/exchange", to: "free_cupons#new"
+  get "/exchange", to: "free_cupons#new"
+  
 
 
   resources :users, only: [:create] do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :free_cupons, except: [:edit, :update, :destroy], shallow: true do
+
+  resources :free_cupons, except: [:new, :edit, :update, :destroy], shallow: true do
   end
 end
