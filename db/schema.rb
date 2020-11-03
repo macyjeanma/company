@@ -12,14 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_10_29_063314) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "free_cupons", force: :cascade do |t|
     t.string "compony"
     t.string "serial_number"
     t.string "phone"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"string\"", name: "index_free_cupons_on_string", unique: true
     t.index ["compony"], name: "index_free_cupons_on_compony", unique: true
     t.index ["user_id"], name: "index_free_cupons_on_user_id"
   end

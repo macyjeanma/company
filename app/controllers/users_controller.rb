@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def sign_in
+    @user = User.new
+  end
+
   def login
     if user_params[:account] && user_params[:password]
       user = User.login(user_params)

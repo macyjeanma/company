@@ -11,17 +11,17 @@
 <%= form_for(@free_cupon) do |f| %>
   <div class="fields">
     <%= f.label :compony, "公司名稱" %>
-    <%= f.text_field :compony %>
+    <%= f.text_field :compony, placeholder: '不可空白'%>
   </div>
 
   <div class="fields">
     <%= f.label :serial_number, "公司統編" %>
-    <%= f.text_field :serial_number %>
+    <%= f.text_field :serial_number, placeholder: '不可空白' %>
   </div>
 
   <div class="fields">
     <%= f.label :phone, "電話" %>
-    <%= f.telephone_field :phone %>
+    <%= f.telephone_field :phone, placeholder: '不可空白' %>
   </div>
 
   <%= f.submit "送出" %>

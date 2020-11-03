@@ -8,6 +8,5 @@ class CreateFreeCupons < ActiveRecord::Migration[6.0]
       t.timestamps
     end
     add_index :free_cupons, :compony, unique: true
-    add_index :free_cupons, :string, unique: true
   end
 end
